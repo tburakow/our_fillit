@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fillit.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tburakow <tburakow@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ctrouve <ctrouve@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/06 11:56:33 by nsamoilo          #+#    #+#             */
-/*   Updated: 2022/02/02 21:34:06 by tburakow         ###   ########.fr       */
+/*   Updated: 2022/02/03 15:03:33 by ctrouve          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ typedef struct s_piece
 	char			letter;
 	int				leader_coord[2];
 	int				friends_coord[6];
+	int				cancel;
 	struct s_piece	*next;
 }	t_piece;
 
@@ -40,7 +41,7 @@ void		print_map(t_map *map, int size);
 void		run_fillit(int *coords, int count);
 int			allblocksinmap(t_piece *piece, t_map *map, int x_offset, \
 			int y_offset);
-int			cancelplacepiece(t_piece *piece, t_map *map);
+int			cancelplacepiece(t_piece *piece, t_map *map, int x_offset, int y_offset);
 int			*attrib_leader_coord(int *piece_coord_array, int i);
 int			*attrib_friends_coord(int *piece_coord_array, int i);
 int			get_map_size(int count);
