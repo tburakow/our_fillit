@@ -6,7 +6,7 @@
 /*   By: tburakow <tburakow@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/17 18:12:54 by tburakow          #+#    #+#             */
-/*   Updated: 2022/02/02 21:52:24 by tburakow         ###   ########.fr       */
+/*   Updated: 2022/02/03 15:29:29 by tburakow         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 static	int	cnt_link_test(size_t *cnt_link)
 {
 	if ((cnt_link[1] % 3 != 0 && cnt_link[0] % 4 != 0 && \
-	cnt_link[1] % 4 != 0) || cnt_link[1] == 0)
+	cnt_link[1] % 4 != 0) || cnt_link == 0)
 		return (0);
 	return (1);
 }
