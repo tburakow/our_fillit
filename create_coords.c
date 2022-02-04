@@ -6,7 +6,7 @@
 /*   By: tburakow <tburakow@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/17 18:12:54 by tburakow          #+#    #+#             */
-/*   Updated: 2022/02/04 12:23:20 by tburakow         ###   ########.fr       */
+/*   Updated: 2022/02/04 12:46:47 by tburakow         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@
 */
 static	int	cnt_link_test(size_t *cnt_link)
 {
-	if ((cnt_link[0] % 4 != 0 && cnt_link[1] % 3 != 0 && \
-	cnt_link[1] % 4 != 0) || cnt_link[1] == 0)
+	if ((cnt_link[1] % 3 != 0 && cnt_link[1] % 4 != 0) || \
+	cnt_link[0] % 4 != 0 || cnt_link[1] == 0)
 		return (0);
 	return (1);
 }
@@ -43,7 +43,7 @@ static int	offset(int **coords, int k, size_t *cnt_link)
 ** This function splits the input string and converts it to coordinates of
 ** the tetriminos
 */
-static int	*split_and_offset(char *str, size_t *ijk, size_t len, int *coords)
+int	*split_and_offset(char *str, size_t *ijk, size_t len, int *coords)
 {
 	size_t	cnt_link[2];
 
@@ -54,16 +54,17 @@ static int	*split_and_offset(char *str, size_t *ijk, size_t len, int *coords)
 		while (ijk[0] % 21 != 0 || ijk[2] == 0)
 		{
 			ijk[2] = 1;
-			if (str[ijk[0]++] == '#')
+			if (str[ijk[0]] == '#')
 			{
 				cnt_link[0]++;
 				if (str[ijk[0] + 1] == '#')
 					cnt_link[1]++;
 				if (str[ijk[0] + 5] == '#')
 					cnt_link[1]++;
-				coords[ijk[1]++] = (ijk[0] - 1) % 21 / 5 % 5;
-				coords[ijk[1]++] = (ijk[0] - 1) % 21 % 5;
+				coords[ijk[1]++] = (ijk[0]) % 21 / 5 % 5;
+				coords[ijk[1]++] = (ijk[0]) % 21 % 5;
 			}
+			ijk[0]++;
 		}
 		if (offset(&coords, ijk[1], cnt_link) == 0)
 			return (NULL);
