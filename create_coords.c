@@ -6,7 +6,7 @@
 /*   By: tburakow <tburakow@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/17 18:12:54 by tburakow          #+#    #+#             */
-/*   Updated: 2022/02/04 12:46:47 by tburakow         ###   ########.fr       */
+/*   Updated: 2022/02/04 13:22:40 by tburakow         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,15 @@ static int	offset(int **coords, int k, size_t *cnt_link)
 	return (1);
 }
 
+static void count_and_link(size_t *cnt_link, char *str, size_t i)
+{
+	cnt_link[0]++;
+	if (str[i + 1] == '#')
+		cnt_link[1]++;
+	if (str[i + 5] == '#')
+		cnt_link[1]++;
+}
+
 /*
 ** This function splits the input string and converts it to coordinates of
 ** the tetriminos
@@ -56,11 +65,7 @@ int	*split_and_offset(char *str, size_t *ijk, size_t len, int *coords)
 			ijk[2] = 1;
 			if (str[ijk[0]] == '#')
 			{
-				cnt_link[0]++;
-				if (str[ijk[0] + 1] == '#')
-					cnt_link[1]++;
-				if (str[ijk[0] + 5] == '#')
-					cnt_link[1]++;
+				count_and_link(cnt_link, str, ijk[0]);
 				coords[ijk[1]++] = (ijk[0]) % 21 / 5 % 5;
 				coords[ijk[1]++] = (ijk[0]) % 21 % 5;
 			}
