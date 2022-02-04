@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   placepiece.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ctrouve <ctrouve@student.hive.fi>          +#+  +:+       +#+        */
+/*   By: tburakow <tburakow@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/17 16:54:22 by ctrouve           #+#    #+#             */
-/*   Updated: 2022/02/04 11:55:55 by ctrouve          ###   ########.fr       */
+/*   Updated: 2022/02/04 15:27:15 by tburakow         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,6 +99,8 @@ int	placepiece(t_piece *piece, t_map *map, int x_offset, int y_offset)
 	j = 0;
 	while (j < 7)
 	{
+		//line 102 (now 103) has a problem with reading negative totals of x + x_offset
+		//and y + y_offset being negative.
 		if (map->map_array[y + y_offset][x + x_offset] == '.')
 		{
 			map->map_array[y + y_offset][x + x_offset] = piece->letter;

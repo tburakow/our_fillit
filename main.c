@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ctrouve <ctrouve@student.hive.fi>          +#+  +:+       +#+        */
+/*   By: tburakow <tburakow@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/14 16:52:11 by tburakow          #+#    #+#             */
-/*   Updated: 2022/02/04 12:00:38 by ctrouve          ###   ########.fr       */
+/*   Updated: 2022/02/04 14:52:24 by tburakow         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,8 @@ int	main(int argc, char **argv)
 		ft_putstr("usage: enter one filename only after the executable.\n");
 		return (1);
 	}
-	str = (char *)malloc(sizeof(char) * 546);
+	//str = (char *)malloc(sizeof(char) * 547);
+	str = ft_strnew(547);
 	fd = open(argv[1], O_RDONLY);
 	read(fd, str, 547);
 	if (str[546] != '\0' || check_dots(str) == 0)
