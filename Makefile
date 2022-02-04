@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: tburakow <tburakow@student.42.fr>          +#+  +:+       +#+         #
+#    By: ctrouve <ctrouve@student.hive.fi>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/27 10:25:06 by ctrouve           #+#    #+#              #
-#    Updated: 2022/02/02 17:56:35 by tburakow         ###   ########.fr        #
+#    Updated: 2022/02/04 11:24:56 by ctrouve          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,8 +21,8 @@ all: $(NAME)
 
 $(NAME):
 	make -C libft/
-	gcc -Wall -Wextra -Werror -g -c $(FILES)
-	gcc -Wall -Werror -Wextra -g $(OBJECTS) libft/libft.a -o $(NAME)
+	gcc -Wall -Wextra -Werror -c $(FILES)
+	gcc -Wall -Werror -Wextra $(OBJECTS) libft/libft.a -o $(NAME)
 	make fclean -C libft/
 
 clean:

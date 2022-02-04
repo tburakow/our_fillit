@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   run_fillit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tburakow <tburakow@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ctrouve <ctrouve@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 15:25:37 by ctrouve           #+#    #+#             */
-/*   Updated: 2022/02/02 21:39:47 by tburakow         ###   ########.fr       */
+/*   Updated: 2022/02/04 12:00:47 by ctrouve          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,6 @@ void	run_fillit(int *coords, int count)
 	map_size = get_map_size(count);
 	map = makemap(map_size);
 	list = makelist(coords, count, 'A');
-	free(coords);
 	solve(list, map, 0, 0);
 	ret = mapready(map, count);
 	while (ret == 0)
@@ -66,7 +65,7 @@ void	run_fillit(int *coords, int count)
 		solve(list, map, 0, 0);
 		ret = mapready(map, count);
 	}
-	free(list);
 	print_map(map, map->map_size);
-	free_map(map, map_size);
+	system("leaks fillit");
+	exit(0);
 }

@@ -6,7 +6,7 @@
 /*   By: ctrouve <ctrouve@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/17 13:58:58 by ctrouve           #+#    #+#             */
-/*   Updated: 2022/01/27 10:17:54 by ctrouve          ###   ########.fr       */
+/*   Updated: 2022/02/04 11:52:22 by ctrouve          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ t_piece	*makepiece(int *coords, char tetriletter, int start)
 		i++;
 		start++;
 	}
+	piece->cancel = 0;
 	piece->letter = tetriletter;
 	return (piece);
 }

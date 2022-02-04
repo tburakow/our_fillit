@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   create_coords.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tburakow <tburakow@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ctrouve <ctrouve@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/17 18:12:54 by tburakow          #+#    #+#             */
-/*   Updated: 2022/02/03 16:08:23 by tburakow         ###   ########.fr       */
+/*   Updated: 2022/02/04 11:25:56 by ctrouve          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ static int	offset(int **coords, int k, size_t *cnt_link)
 ** This function splits the input string and converts it to coordinates of
 ** the tetriminos
 */
-int	*split_and_offset(char *str, size_t *ijk, size_t len, int *coords)
+static int	*split_and_offset(char *str, size_t *ijk, size_t len, int *coords)
 {
 	size_t	cnt_link[2];
 
@@ -87,5 +87,7 @@ int	*create_coords(char *str)
 	coords = (int *)malloc(sizeof(int) * ((len + 1) / 21) * 8);
 	if (split_and_offset(str, ijk, len, coords) == NULL)
 		return (NULL);
+	free(str);
+	str = NULL;
 	return (coords);
 }
