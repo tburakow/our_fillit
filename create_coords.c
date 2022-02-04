@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   create_coords.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ctrouve <ctrouve@student.hive.fi>          +#+  +:+       +#+        */
+/*   By: tburakow <tburakow@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/17 18:12:54 by tburakow          #+#    #+#             */
-/*   Updated: 2022/02/04 11:25:56 by ctrouve          ###   ########.fr       */
+/*   Updated: 2022/02/04 12:23:20 by tburakow         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,8 @@
 */
 static	int	cnt_link_test(size_t *cnt_link)
 {
-	if (cnt_link[1] != 3 && cnt_link[0] != 4 && cnt_link[1] != 4)
+	if ((cnt_link[0] % 4 != 0 && cnt_link[1] % 3 != 0 && \
+	cnt_link[1] % 4 != 0) || cnt_link[1] == 0)
 		return (0);
 	return (1);
 }
