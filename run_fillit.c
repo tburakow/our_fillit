@@ -6,7 +6,7 @@
 /*   By: ctrouve <ctrouve@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 15:25:37 by ctrouve           #+#    #+#             */
-/*   Updated: 2022/02/04 12:00:47 by ctrouve          ###   ########.fr       */
+/*   Updated: 2022/02/05 13:22:36 by ctrouve          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,6 @@ void	run_fillit(int *coords, int count)
 		ret = mapready(map, count);
 	}
 	print_map(map, map->map_size);
-	system("leaks fillit");
+	//system("leaks fillit");
 	exit(0);
 }

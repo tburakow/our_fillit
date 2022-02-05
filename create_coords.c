@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   create_coords.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tburakow <tburakow@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ctrouve <ctrouve@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/17 18:12:54 by tburakow          #+#    #+#             */
-/*   Updated: 2022/02/04 13:22:40 by tburakow         ###   ########.fr       */
+/*   Updated: 2022/02/05 15:39:21 by ctrouve          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,11 @@ static	int	cnt_link_test(size_t *cnt_link)
 {
 	if ((cnt_link[1] % 3 != 0 && cnt_link[1] % 4 != 0) || \
 	cnt_link[0] % 4 != 0 || cnt_link[1] == 0)
+	{
+		printf("\nvalue of cnt_link[1]: %zu\n", cnt_link[1]);
+		ft_putstr("\nline 21 cnt_link_test\n");
 		return (0);
+	}
 	return (1);
 }
 
@@ -32,14 +36,17 @@ static	int	cnt_link_test(size_t *cnt_link)
 static int	offset(int **coords, int k, size_t *cnt_link)
 {
 	if (cnt_link_test(cnt_link) == 0)
+	{
+		ft_putstr("\nline 37 offset\n");
 		return (0);
+	}
 	set_voffset(*coords, (k - 8), (*coords)[k - 8]);
 	set_hoffset(*coords, (k - 7));
 	set_relative(*coords, (k - 7));
 	return (1);
 }
 
-static void count_and_link(size_t *cnt_link, char *str, size_t i)
+static void	count_and_link(size_t *cnt_link, char *str, size_t i)
 {
 	cnt_link[0]++;
 	if (str[i + 1] == '#')
@@ -72,7 +79,10 @@ int	*split_and_offset(char *str, size_t *ijk, size_t len, int *coords)
 			ijk[0]++;
 		}
 		if (offset(&coords, ijk[1], cnt_link) == 0)
+		{
+			ft_putstr("\nline 80 offset(&coords, ijk[1], cnt_link) == 0\n");
 			return (NULL);
+		}
 		ijk[2] = 0;
 	}
 	return (coords);
@@ -93,7 +103,10 @@ int	*create_coords(char *str)
 	len = ft_strlen(str);
 	coords = (int *)malloc(sizeof(int) * ((len + 1) / 21) * 8);
 	if (split_and_offset(str, ijk, len, coords) == NULL)
+	{
+		ft_putstr("\nline 104 create_coords\n");
 		return (NULL);
+	}
 	free(str);
 	str = NULL;
 	return (coords);

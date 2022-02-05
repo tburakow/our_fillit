@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   makelist.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tburakow <tburakow@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ctrouve <ctrouve@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/17 16:04:56 by ctrouve           #+#    #+#             */
-/*   Updated: 2022/02/04 14:58:19 by tburakow         ###   ########.fr       */
+/*   Updated: 2022/02/05 13:01:18 by ctrouve          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@ t_piece	*makelist(int *list_coord_array, int count, char letter)
 		if (letter == 'A')
 		{
 			first = makepiece(list_coord_array, letter, start);
-			//current = (t_piece *)malloc(sizeof(t_piece));
 			current = first;
 		}
 		else
