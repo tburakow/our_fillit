@@ -1,0 +1,109 @@
+==15961== Memcheck, a memory error detector
+==15961== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==15961== Using Valgrind-3.19.0.GIT-lbmacos and LibVEX; rerun with -h for copyright info
+==15961== Command: ./fillit trialcube.txt
+==15961== 
+AABB
+AABB
+CCDD
+CCDD
+==15961== 
+==15961== HEAP SUMMARY:
+==15961==     in use at exit: 19,607 bytes in 179 blocks
+==15961==   total heap usage: 201 allocs, 22 frees, 28,603 bytes allocated
+==15961== 
+==15961== 64 bytes in 1 blocks are definitely lost in loss record 32 of 53
+==15961==    at 0x1000D8FF0: calloc (in /Users/tburakow/.brew/Cellar/valgrind/HEAD-da51a73/libexec/valgrind/vgpreload_memcheck-amd64-darwin.so)
+==15961==    by 0x1005FB98C: _objc_flush_caches (in /usr/lib/libobjc.A.dylib)
+==15961==    by 0x1005FBA6B: _objc_flush_caches (in /usr/lib/libobjc.A.dylib)
+==15961==    by 0x1005FBA6B: _objc_flush_caches (in /usr/lib/libobjc.A.dylib)
+==15961==    by 0x1005E6266: _read_images (in /usr/lib/libobjc.A.dylib)
+==15961==    by 0x1005E4A4F: _hasObjcContents (in /usr/lib/libobjc.A.dylib)
+==15961==    by 0x1005F755F: __objc_personality_v0 (in /usr/lib/libobjc.A.dylib)
+==15961==    by 0x10000A47A: dyld::notifyBatchPartial(dyld_image_states, bool, char const* (*)(dyld_image_states, unsigned int, dyld_image_info const*), bool, bool) (in /usr/lib/dyld)
+==15961==    by 0x10000A62D: dyld::registerObjCNotifiers(void (*)(unsigned int, char const* const*, mach_header const* const*), void (*)(char const*, mach_header const*), void (*)(char const*, mach_header const*)) (in /usr/lib/dyld)
+==15961==    by 0x10023EA26: _dyld_objc_notify_register (in /usr/lib/system/libdyld.dylib)
+==15961==    by 0x1005E4233: environ_init (in /usr/lib/libobjc.A.dylib)
+==15961==    by 0x1001D5E35: _os_object_init (in /usr/lib/system/libdispatch.dylib)
+==15961== 
+==15961== 64 bytes in 1 blocks are definitely lost in loss record 33 of 53
+==15961==    at 0x1000D8FF0: calloc (in /Users/tburakow/.brew/Cellar/valgrind/HEAD-da51a73/libexec/valgrind/vgpreload_memcheck-amd64-darwin.so)
+==15961==    by 0x1005FB98C: _objc_flush_caches (in /usr/lib/libobjc.A.dylib)
+==15961==    by 0x1005FBA8C: _objc_flush_caches (in /usr/lib/libobjc.A.dylib)
+==15961==    by 0x1005FBA6B: _objc_flush_caches (in /usr/lib/libobjc.A.dylib)
+==15961==    by 0x1005FBA6B: _objc_flush_caches (in /usr/lib/libobjc.A.dylib)
+==15961==    by 0x1005E6266: _read_images (in /usr/lib/libobjc.A.dylib)
+==15961==    by 0x1005E4A4F: _hasObjcContents (in /usr/lib/libobjc.A.dylib)
+==15961==    by 0x1005F755F: __objc_personality_v0 (in /usr/lib/libobjc.A.dylib)
+==15961==    by 0x10000A47A: dyld::notifyBatchPartial(dyld_image_states, bool, char const* (*)(dyld_image_states, unsigned int, dyld_image_info const*), bool, bool) (in /usr/lib/dyld)
+==15961==    by 0x10000A62D: dyld::registerObjCNotifiers(void (*)(unsigned int, char const* const*, mach_header const* const*), void (*)(char const*, mach_header const*), void (*)(char const*, mach_header const*)) (in /usr/lib/dyld)
+==15961==    by 0x10023EA26: _dyld_objc_notify_register (in /usr/lib/system/libdyld.dylib)
+==15961==    by 0x1005E4233: environ_init (in /usr/lib/libobjc.A.dylib)
+==15961== 
+==15961== 192 bytes in 3 blocks are definitely lost in loss record 39 of 53
+==15961==    at 0x1000D8FF0: calloc (in /Users/tburakow/.brew/Cellar/valgrind/HEAD-da51a73/libexec/valgrind/vgpreload_memcheck-amd64-darwin.so)
+==15961==    by 0x1005FB98C: _objc_flush_caches (in /usr/lib/libobjc.A.dylib)
+==15961==    by 0x1005FBA6B: _objc_flush_caches (in /usr/lib/libobjc.A.dylib)
+==15961==    by 0x1005E6266: _read_images (in /usr/lib/libobjc.A.dylib)
+==15961==    by 0x1005E4A4F: _hasObjcContents (in /usr/lib/libobjc.A.dylib)
+==15961==    by 0x1005F755F: __objc_personality_v0 (in /usr/lib/libobjc.A.dylib)
+==15961==    by 0x10000A47A: dyld::notifyBatchPartial(dyld_image_states, bool, char const* (*)(dyld_image_states, unsigned int, dyld_image_info const*), bool, bool) (in /usr/lib/dyld)
+==15961==    by 0x10000A62D: dyld::registerObjCNotifiers(void (*)(unsigned int, char const* const*, mach_header const* const*), void (*)(char const*, mach_header const*), void (*)(char const*, mach_header const*)) (in /usr/lib/dyld)
+==15961==    by 0x10023EA26: _dyld_objc_notify_register (in /usr/lib/system/libdyld.dylib)
+==15961==    by 0x1005E4233: environ_init (in /usr/lib/libobjc.A.dylib)
+==15961==    by 0x1001D5E35: _os_object_init (in /usr/lib/system/libdispatch.dylib)
+==15961==    by 0x1001E1AD1: libdispatch_init (in /usr/lib/system/libdispatch.dylib)
+==15961== 
+==15961== 192 bytes in 3 blocks are definitely lost in loss record 40 of 53
+==15961==    at 0x1000D8FF0: calloc (in /Users/tburakow/.brew/Cellar/valgrind/HEAD-da51a73/libexec/valgrind/vgpreload_memcheck-amd64-darwin.so)
+==15961==    by 0x1005FB98C: _objc_flush_caches (in /usr/lib/libobjc.A.dylib)
+==15961==    by 0x1005FBA8C: _objc_flush_caches (in /usr/lib/libobjc.A.dylib)
+==15961==    by 0x1005FBA6B: _objc_flush_caches (in /usr/lib/libobjc.A.dylib)
+==15961==    by 0x1005E6266: _read_images (in /usr/lib/libobjc.A.dylib)
+==15961==    by 0x1005E4A4F: _hasObjcContents (in /usr/lib/libobjc.A.dylib)
+==15961==    by 0x1005F755F: __objc_personality_v0 (in /usr/lib/libobjc.A.dylib)
+==15961==    by 0x10000A47A: dyld::notifyBatchPartial(dyld_image_states, bool, char const* (*)(dyld_image_states, unsigned int, dyld_image_info const*), bool, bool) (in /usr/lib/dyld)
+==15961==    by 0x10000A62D: dyld::registerObjCNotifiers(void (*)(unsigned int, char const* const*, mach_header const* const*), void (*)(char const*, mach_header const*), void (*)(char const*, mach_header const*)) (in /usr/lib/dyld)
+==15961==    by 0x10023EA26: _dyld_objc_notify_register (in /usr/lib/system/libdyld.dylib)
+==15961==    by 0x1005E4233: environ_init (in /usr/lib/libobjc.A.dylib)
+==15961==    by 0x1001D5E35: _os_object_init (in /usr/lib/system/libdispatch.dylib)
+==15961== 
+==15961== 1,216 bytes in 19 blocks are definitely lost in loss record 47 of 53
+==15961==    at 0x1000D8FF0: calloc (in /Users/tburakow/.brew/Cellar/valgrind/HEAD-da51a73/libexec/valgrind/vgpreload_memcheck-amd64-darwin.so)
+==15961==    by 0x1005FB98C: _objc_flush_caches (in /usr/lib/libobjc.A.dylib)
+==15961==    by 0x1005E6266: _read_images (in /usr/lib/libobjc.A.dylib)
+==15961==    by 0x1005E4A4F: _hasObjcContents (in /usr/lib/libobjc.A.dylib)
+==15961==    by 0x1005F755F: __objc_personality_v0 (in /usr/lib/libobjc.A.dylib)
+==15961==    by 0x10000A47A: dyld::notifyBatchPartial(dyld_image_states, bool, char const* (*)(dyld_image_states, unsigned int, dyld_image_info const*), bool, bool) (in /usr/lib/dyld)
+==15961==    by 0x10000A62D: dyld::registerObjCNotifiers(void (*)(unsigned int, char const* const*, mach_header const* const*), void (*)(char const*, mach_header const*), void (*)(char const*, mach_header const*)) (in /usr/lib/dyld)
+==15961==    by 0x10023EA26: _dyld_objc_notify_register (in /usr/lib/system/libdyld.dylib)
+==15961==    by 0x1005E4233: environ_init (in /usr/lib/libobjc.A.dylib)
+==15961==    by 0x1001D5E35: _os_object_init (in /usr/lib/system/libdispatch.dylib)
+==15961==    by 0x1001E1AD1: libdispatch_init (in /usr/lib/system/libdispatch.dylib)
+==15961==    by 0x1000E49C4: libSystem_initializer (in /usr/lib/libSystem.B.dylib)
+==15961== 
+==15961== 1,216 bytes in 19 blocks are definitely lost in loss record 48 of 53
+==15961==    at 0x1000D8FF0: calloc (in /Users/tburakow/.brew/Cellar/valgrind/HEAD-da51a73/libexec/valgrind/vgpreload_memcheck-amd64-darwin.so)
+==15961==    by 0x1005FB98C: _objc_flush_caches (in /usr/lib/libobjc.A.dylib)
+==15961==    by 0x1005FBA8C: _objc_flush_caches (in /usr/lib/libobjc.A.dylib)
+==15961==    by 0x1005E6266: _read_images (in /usr/lib/libobjc.A.dylib)
+==15961==    by 0x1005E4A4F: _hasObjcContents (in /usr/lib/libobjc.A.dylib)
+==15961==    by 0x1005F755F: __objc_personality_v0 (in /usr/lib/libobjc.A.dylib)
+==15961==    by 0x10000A47A: dyld::notifyBatchPartial(dyld_image_states, bool, char const* (*)(dyld_image_states, unsigned int, dyld_image_info const*), bool, bool) (in /usr/lib/dyld)
+==15961==    by 0x10000A62D: dyld::registerObjCNotifiers(void (*)(unsigned int, char const* const*, mach_header const* const*), void (*)(char const*, mach_header const*), void (*)(char const*, mach_header const*)) (in /usr/lib/dyld)
+==15961==    by 0x10023EA26: _dyld_objc_notify_register (in /usr/lib/system/libdyld.dylib)
+==15961==    by 0x1005E4233: environ_init (in /usr/lib/libobjc.A.dylib)
+==15961==    by 0x1001D5E35: _os_object_init (in /usr/lib/system/libdispatch.dylib)
+==15961==    by 0x1001E1AD1: libdispatch_init (in /usr/lib/system/libdispatch.dylib)
+==15961== 
+==15961== LEAK SUMMARY:
+==15961==    definitely lost: 2,944 bytes in 46 blocks
+==15961==    indirectly lost: 0 bytes in 0 blocks
+==15961==      possibly lost: 8,840 bytes in 7 blocks
+==15961==    still reachable: 7,823 bytes in 126 blocks
+==15961==         suppressed: 0 bytes in 0 blocks
+==15961== Reachable blocks (those to which a pointer was found) are not shown.
+==15961== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==15961== 
+==15961== For lists of detected and suppressed errors, rerun with: -s
+==15961== ERROR SUMMARY: 12 errors from 12 contexts (suppressed: 398 from 10)

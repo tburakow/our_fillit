@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ctrouve <ctrouve@student.hive.fi>          +#+  +:+       +#+        */
+/*   By: tburakow <tburakow@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/14 16:52:11 by tburakow          #+#    #+#             */
-/*   Updated: 2022/02/05 15:28:45 by ctrouve          ###   ########.fr       */
+/*   Updated: 2022/02/07 14:51:10 by tburakow         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,23 +52,14 @@ int	main(int argc, char **argv)
 	fd = open(argv[1], O_RDONLY);
 	read(fd, str, 547);
 	if (str[545] != '\0' || check_dots(str) == 0)
-		{
-			ft_putstr("\nmain line 54\n");
-			return (error_output());
-		}
+		return (error_output());
 	close(fd);
 	count = ((ft_strlen(str) + 1) / 21);
 	if (fd == -1 || ft_check_string(str) != 1 || (ft_strlen(str) + 1) % 21 != 0)
-		{
-			ft_putstr("\nmain line 61\n");
-			return (error_output());
-		}
+		return (error_output());
 	coords = create_coords(str);
 	if (!coords)
-		{
-			ft_putstr("\nmain line 67\n");
-			return (error_output());
-		}
+		return (error_output());
 	run_fillit(coords, count);
 	return (0);
 }
