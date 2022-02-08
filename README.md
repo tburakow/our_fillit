@@ -31,7 +31,11 @@ $
 
 - Each piece consists of four hashes that are attached to each other (parallel and next to, or above/below.)
 
-- There can be no empty line at the end of the inut file.
+- There can be no empty line at the end of the input file.
+
+Fixes/future additions:
+
+- Some amounts of identical tetriminos slow the program a lot. For example 10 square tetriminos is incredibly slow.
 
 The output is in the following format (for above example):
 
