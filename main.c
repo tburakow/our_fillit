@@ -12,12 +12,20 @@
 
 #include "fillit.h"
 
+/*
+** Outputs the common error message.
+*/
 int	error_output(void)
 {
 	ft_putstr("error\n");
 	return (1);
 }
 
+/*
+** Checks that the string read from the file descriptor has the
+** correct amount of dots (.) when compared to the total length
+** of the string.
+*/
 static int	check_dots(char *str)
 {
 	int	i;
