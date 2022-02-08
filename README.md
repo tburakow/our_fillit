@@ -1,7 +1,7 @@
 # our_fillit
 Hive Helsinki project. A program to fit tetris-pieces into smallest possible square. (no rotation.)
 
-This program was written together with @github/cony101. 
+This program was written together with [@github/Conu101](https://github.com/Conu101). 
 
 ## Quick start
 
